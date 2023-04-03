@@ -13,4 +13,20 @@ public class View {
 				"5.salir";
 		return Integer.parseInt(JOptionPane.showInputDialog(null,message));
 	}
+	public void showMessageCreateRoom() {
+		JOptionPane.showMessageDialog(null, "Crear Habitacion");
+	}
+	public Integer readIdRoom() {
+		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id: "));
+	}
+	public Integer readFloorNumber() {
+		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de piso: "));
+	}
+	public Integer readRoomNumber() {
+		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de piso: "));
+	}
+	public Integer readBedNumber() {
+		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de piso: "));
+	}
+	
 }
