@@ -23,10 +23,25 @@ public class View {
 		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de piso: "));
 	}
 	public Integer readRoomNumber() {
-		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de piso: "));
+		return Integer.parseInt(JOptionPane.showInputDialog("Ingresar el numero de habitacion: "));
 	}
 	public Integer readBedNumber() {
 		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de piso: "));
+	}
+	public void showMessageCreatePatient() {
+		JOptionPane.showMessageDialog(null, "Crear Paciente");
+	}
+	public Integer readRoomNumberForPatient() {
+		return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de la habitacion: "));
+	}
+	public String readPatientName() {
+		return JOptionPane.showInputDialog("Ingrese el nombre del paciente: ");
+	}
+	public String readPatientLastName() {
+		return JOptionPane.showInputDialog("Ingrese el apellido del paciente: ");
+	}
+	public String getContactPhoneNumberByPatient() {
+		return JOptionPane.showInputDialog("Ingrese el apellido del paciente: ");
 	}
 	
 }
