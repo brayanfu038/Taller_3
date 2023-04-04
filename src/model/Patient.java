@@ -31,5 +31,11 @@ public class Patient {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+	@Override
+	public String toString() {
+		return "Patient [contactPhoneNumber=" + contactPhoneNumber + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", status=" + status.toString() + "]";
+	}
+	
 	
 }

@@ -16,4 +16,9 @@ public class Status {
 	public void setIsbedOcuppated(boolean isbedOcuppated) {
 		this.isbedOcuppated = isbedOcuppated;
 	}
+
+	@Override
+	public String toString() {
+		return "Status [isbedOcuppated=" + isbedOcuppated + "]";
+	}
 }

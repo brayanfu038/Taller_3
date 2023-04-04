@@ -11,11 +11,15 @@ public class Room {
 	private List<Patient>patients;
 	private Integer roomNumber;
 
+	public Room() {
+		patients = new ArrayList();
+	}
 	
 	public Integer getBedNumbers() {
 		return bedNumbers;
 	}
 	public void addPatient(Patient patient) {
+		System.out.println("entro");
 		patients.add(patient);
 	}
 	public void setBedNumbers(Integer bedNumbers) {
@@ -44,6 +48,11 @@ public class Room {
 	}
 	public void setRoomNumber(Integer roomNumber) {
 		this.roomNumber = roomNumber;
+	}
+	@Override
+	public String toString() {
+		return "Room [bedNumbers=" + bedNumbers + ", floorNumber=" + floorNumber + ", id=" + id + ", patients="
+				+ patients.toString() + ", roomNumber=" + roomNumber + "]";
 	}
 	
 	

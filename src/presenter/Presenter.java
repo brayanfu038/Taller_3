@@ -24,15 +24,16 @@ public class Presenter {
 				case 1:
 					this.showMenuOfRoom();
 				break;
-					
 				case 2:
 					this.showMenuOfPatient();
 				break;
 				case 3:
+					colsanitas.show();
 				break;
 				case 4:
 				break;
 				default:
+					view.showGraphicMessageInvalidOption();
 					break;
 				}
 		} while (option!=5);
@@ -43,5 +44,10 @@ public class Presenter {
 	}
 	public void showMenuOfPatient() {
 		view.showMessageCreatePatient();
+		try {
+			colsanitas.createPatient(view.readRoomNumberForPatient(),view.readPatientName(),view.readPatientLastName(),view.getContactPhoneNumberByPatient());
+		} catch (NumberFormatException e) {
+		}
+		
 	}
 }
