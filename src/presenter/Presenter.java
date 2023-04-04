@@ -19,7 +19,11 @@ public class Presenter {
 	}
 	public void runMainMenu() {
 		int option=0;
+	
+			
+		
 		do {
+			try {
 			 switch (option=view.showMainMenu()) {
 				case 1:
 					this.showMenuOfRoom();
@@ -32,11 +36,19 @@ public class Presenter {
 				break;
 				case 4:
 				break;
+				case 5:
+					view.showGraphicMessage("gracias por usar nuestros servicios");
+					break;
 				default:
 					view.showGraphicMessageInvalidOption();
 					break;
 				}
+		} catch (NumberFormatException e) {
+			view.showGraphicMessage("Lo siento, ha ocurrido un error. La entrada que ingresó no es un número válido.\n"
+					+ "Asegúrese de ingresar solo números y vuelva a intentarlo");
+		}
 		} while (option!=5);
+		
 	}
 	public void showMenuOfRoom() {
 		view.showMessageCreateRoom();
@@ -44,10 +56,8 @@ public class Presenter {
 	}
 	public void showMenuOfPatient() {
 		view.showMessageCreatePatient();
-		try {
-			colsanitas.createPatient(view.readRoomNumberForPatient(),view.readPatientName(),view.readPatientLastName(),view.getContactPhoneNumberByPatient());
-		} catch (NumberFormatException e) {
-		}
+		colsanitas.createPatient(view.readRoomNumberForPatient(),view.readPatientName(),view.readPatientLastName(),view.getContactPhoneNumberByPatient());
+		
 		
 	}
 }
