@@ -1,23 +1,29 @@
 package presenter;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import model.Colsanitas;
+import model.XmlWriter;
 import view.View;
 
 public class Presenter {
+	XmlWriter xmlWriter;
 	Colsanitas colsanitas;
 	View view;
-	public Presenter() {
+	public Presenter() throws ParserConfigurationException {
 		view = new View();
 		colsanitas = new Colsanitas();
+		xmlWriter = new XmlWriter();
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParserConfigurationException, TransformerException {
 		Presenter presenter = new Presenter();
 		presenter.Run();
 	}
-	public void Run() {
+	public void Run() throws TransformerException {
 	this.runMainMenu();
 	}
-	public void runMainMenu() {
+	public void runMainMenu() throws TransformerException {
 		int option=0;
 	
 			
@@ -35,6 +41,7 @@ public class Presenter {
 					colsanitas.show();
 				break;
 				case 4:
+					xmlWriter.guardarhabitaciones(colsanitas.getRooms());
 				break;
 				case 5:
 					view.showGraphicMessage("gracias por usar nuestros servicios");
